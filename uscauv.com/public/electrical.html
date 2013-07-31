@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+	<style>
+	body
+	{
+		background-image: url('assets/img/pattern1.jpg');
+	}
+	</style>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>USC AUV</title>
+  </head>
+  <body>
+    <div id="header_wrapper">
+      <div class="container clearfix">
+        <div id="header">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container">
+                <div class="nav">
+                  <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="about2.html">About Us</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="robot.html">The Robot</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="sponsors.html">Sponsorship</a></li>
+                  </ul>
+                </div>
+                <div class="nav-logo">
+                  <img src="http://mat.usc.edu/wp-content/themes/mat_usc_slideHP/images/usc-logo.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <div id="slide"> 
+          <div id="leftcol">
+            <!--p class="title"> <span style ="color: #FFCC00">USC </span> AUV </p-->
+            <img src="assets/img/uscauvlogo3.png" width="400px"/>
+            <br/> 
+            <p class="subtitle"> <b>University of Southern California</b> Autonomous Underwater Vehicle</p>
+             
+          
+          </div>
+          <div id="rightcol">
+            <!--img src="assets/img/seabee1.jpg" width="200px"/--> 
+            <div id="socialmedia">
+              <a href="https://www.facebook.com/UscAuv" target =" _blank"><img src="assets/img/FaceBook-icon.png" width="45px"/></a>
+              <a href="https://twitter.com/USCAUV" target =" _blank"><img src="assets/img/Twitter-icon.png"/ width="45px"/></a>
+              <a href="http://www.youtube.com/user/uscauvteam" target =" _blank"><img src="assets/img/Youtube-icon.png"/ width="45px"/></a>
+            <a href="https://github.com/uscauv" target =" _blank"><img src="assets/img/GithubLogo.png"/ width="45px"/></a> 
+            </div>          
+          </div>
+        </div>
+      </div>
+    </div>   
+
+
+<div id="what" class="container subsection">
+      <p class="subtitle">SeaBee Electrical System</p>
+      <hr>
+      <div class="span8">
+        
+        <p><b><a href="mechanical.html">Mechanical System</a><br/>
+        <a href="software.html">Software System</a></b></p> <br/>
+        <p><b>Electrical Overview</b></p>
+      </div>
+     
+      <div class="span8">
+        <p>The Seabee electrical system provides the robot and its systems with power and provides the appropriate interface between all of the electrical devices. The main electrical system is made up of two backplanes, and three daughter cards each featuring its own Atmel 1280 microprocessor. This eliminates the need for excessive wires inside the submersible hull, giving the final product a cleaner look, and increasing the overall reliability by alleviating the risk of loose wires and poor connections.</p> <br/> <br/>
+      </div>
+      
+      <div class="span12">
+        <p><b>Computing</b></p>      
+      </div> <br/>
+      <div class="span2">
+        <img src="assets/img/adl.png" width="170px"/>
+      </div>
+      <div class="span6">
+      <p>To support highly computationally-intensive sensing and navigational capabilities, the Seabee AUV features an ADL Embedded Solutions ADLQM67PC-2715QE embedded computer. The ADL features an Intel i7 Quad Core in a PCIe/104 form factor. The high processor performance makes it ideal for a host of tasks performed by the robot, including sonar localization and image processing. The computer is connected to the rest of the electrical system via a system bus connector, and can connect directly to many of the robot's input sensors.</p> <br/> <br/>
+      </div>
+      
+      <div class="span12">
+        <p><b>Power</b></p>      
+      </div> <br/>
+      <div class="span2">
+        <img src="assets/img/power_fall.png" width="170px"/>
+      </div>
+      <div class="span6">
+      <p>Due to the high power consumption of the ADL computer, the Seabee AUV power system incorporates multiple hot-swappable battery packs. The robot is powered by two 25.9 V, 10 amp-hour LiPoly batteries, which allow not only the high current draw of the computer, but provide ample power to each of the robot's six thrusters as well. The raw battery lines are connected to the backplane affixed to the endcap of the hull, and are passed into the power regulating daughtercard of the Kanaloa system. This daughtercard features power switching, forcing the electrical load of the robot onto the battery with the most charge remaining, ensuring that both batteries are discharged at the same rate. Furthermore, this system is diode OR-ed with an external supply, allowing the robot to conserve charge in its batteries while powered by an external source via a tether. </p>
+<p>The daughtercard takes the raw battery power and conditions it for use by the robot's other systems. The ADL computer is powered by a 5-volt source and, to meet the high current requirements of the ADL (13.4 amps at full load), the daughter card features two LMZ23610 converters, which can be daisy-chained to supply 20 amps. Similar converters supply 3.3V, 12V and 24V electricity to auxiliary systems. Also featured on the daughtercard are current monitoring systems, and voltage monitoring feedback systems, allowing the computer to monitor current draw and voltage for each supply. The daughtercard allows for the shutdown of any individual regulator if overheating occurs, or if the power is not being conditioned within acceptable bounds.</p> <br/> <br/>
+      </div>
+      
+      <div class="span12">
+        <p><b>Actuation</b></p>      
+      </div> <br/>
+      <div class="span2">
+        <img src="assets/img/Thrusters.jpg" width="170px"/>
+      </div>
+      <div class="span6">
+      <p>The actuation daughtercard features twelve H-bridge motor controllers with PWM. Six controllers directly drive the robot's thrusters, and are able to run them forwards and backwards, as well as to throttle them effectively via a PWM signal. The other six controllers can be used for manipulators on the robot, including the dropper and torpedo firing system. The current draw of each motor controller is monitored by a current sense resistor, providing the computer with vital information as to the power being drawn by any motor. The computer is also able to shut off any or all of the motors in the event of a malfunction. The vehicle employs six SeaBotix BTD-150 thrusters. They are positioned to allow for control over all six degrees of freedom.</p> <br/> <br/>
+      </div>
+      
+      <div class="span12">
+        <p><b>Sensing</b></p>      
+      </div> <br/>
+      <div class="span2">
+        <img src="assets/img/waho_full.jpg" width="170px"/>
+      </div>
+      <div class="span6">
+      <p>The robot's sensing system is centered around the General Purpose Input/Output (GPIO) daughtercard. "Kanaloa who faces the sea". The daughtercard processes the input from sensors and communicates with the ADL computer over USB. Locally, the daughtercard houses the robot's internal pressure sensor, which provides the ADL with information as to whether or not the pressurized hull is leaking. Connected to the GPIO card via the backplane are various other internal sensors, including the robot's temperature thermistor, a flowmeter sensor from the robot's liquid cooling system, and an RPM sensor from the liquid cooling pump, allowing the ADL to monitor these systems effectively. The robots Remote Input/Output (RIO) systems are located in the robot's RIOpod. The RIOpod communicates with the main daughtercard over SPI, and houses the external pressure sensor, external temperature sensor, and Xsens MTi Attitude Heading Reference System (AHRS). The data from the pressure sensor is sampled remotely by an ADC in the RIOpod.</p>
+<p>Other RIO systems on the robot do not go through the daughter board, but are attached directly to the ADL for convenience. Among these are the robot's four Point Grey Firefly FMVU-03MTC cameras. These cameras are grouped in pairs, two facing downward and two facing forward. This affords the opportunity for stereo vision in both directions, allowing for estimations of depth, as well as optical flow tracking on the bottom of the pool for estimations of position. The robot's Hyrdophone Array Sensor (HAS), features a tetrahedral array of RESON TC4013 Hydrophones. The sonar signals are processed by a Danville Signal dspstak DSP engine, and are sent to the computer to provide direction and distance to the target ping.</p> <br/> <br/>
+      </div>
+    </div>
+    
+
+    <div id="extra">
+      <div class="container">
+        <div class="row-fluid">
+     	    <div class="span4">
+		        <p>
+		        &copy; Copyright 2013 USC AUV
+		        </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+  </body>
+</html>

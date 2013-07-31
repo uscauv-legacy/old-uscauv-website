@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+	<style>
+	body
+	{
+		background-image: url('assets/img/pattern1.jpg');
+	}
+	</style>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>USC AUV</title>
+  </head>
+  <body>
+    <div id="header_wrapper">
+      <div class="container clearfix">
+        <div id="header">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container">
+                <div class="nav">
+                  <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="about2.html">About Us</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="robot.html">The Robot</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="sponsors.html">Sponsorship</a></li>
+                  </ul>
+                </div>
+                <div class="nav-logo">
+                  <img src="http://mat.usc.edu/wp-content/themes/mat_usc_slideHP/images/usc-logo.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <div id="slide"> 
+          <div id="leftcol">
+            <!--p class="title"> <span style ="color: #FFCC00">USC </span> AUV </p-->
+            <img src="assets/img/uscauvlogo3.png" width="400px"/>
+            <br/> 
+            <p class="subtitle"> <b>University of Southern California</b> Autonomous Underwater Vehicle</p>
+             
+          
+          </div>
+          <div id="rightcol">
+            <!--img src="assets/img/seabee1.jpg" width="200px"/--> 
+            <div id="socialmedia">
+              <a href="https://www.facebook.com/UscAuv" target =" _blank"><img src="assets/img/FaceBook-icon.png" width="45px"/></a>
+              <a href="https://twitter.com/USCAUV" target =" _blank"><img src="assets/img/Twitter-icon.png"/ width="45px"/></a>
+              <a href="http://www.youtube.com/user/uscauvteam" target =" _blank"><img src="assets/img/Youtube-icon.png"/ width="45px"/></a>
+            <a href="https://github.com/uscauv" target =" _blank"><img src="assets/img/GithubLogo.png"/ width="45px"/></a> 
+            </div>          
+          </div>
+        </div>
+      </div>
+    </div>   
+
+
+<div id="what" class="container subsection">
+      <p class="subtitle">SeaBee Software System</p>
+      <hr>
+      <div class="span8">
+        <img src="assets/img/ed_graph.png" width="500px"/> <br/><br/>
+        <p><b><a href="electrical.html">Electrical System</a><br/>
+        <a href="mechanical.html">Mechanical System</a></b></p> <br/>
+        <p><b>Software Overview</b></p>     
+      <p>The physical capabilities of the SeaBee AUV are constantly changing in terms of both mechanical and electrical systems. This has necessitated the design of a robust, dynamic software architecture specifically engineered to maximize both functionality and ease of implementation through the use of a modular paradigm. Similar modules are connected via generic interfaces, allowing for high levels of specificity where necessary while still ensuring the trivial addition and removal of modules as physical constraints vary, even at runtime. Furthermore, several pipelines, including vision, localization, and navigation, have been implemented to handle the complex process of feature conversion and filtering, starting with low-level, often noisy feature sources such as physical sensors, and ending at the high-level representations required for efficient planning and decision making.</p> <br/> <br/>
+      </div>
+      
+      <div class="span8">
+        <p><b>Architecture</b></p>      
+      </div> <br/>
+      <div class="span8">
+      <ol>
+        <li>Ubuntu: The Seabee AUV primary computer runs Ubuntu Linux 12.04 "Precise Pangolin" as its operating system. This selection was made based on the open-source nature of Ubuntu, its portability, and its good support for the intended software architecture.</li>
+        <li>ROS: USC AUV has used ROS, an open-source toolkit developed by Willow Garage, since the 2010 RoboSub competition. ROS, or the "Robot Operating System", provides a language-generic, modular paradigm for the development of software systems along with fairly generic implementations of many common algorithms known to the field of robotics, including such categories as sensing, navigation, planning, and visualization.</li>
+        <li>uscauv-ros-pkg: While ROS provides a solid foundation on which to build, working within the toolkit often involves creating unnecessary redundancies across implementations. Furthermore, the serialization-free communication described above is traditionally time consuming to set up, as modules utilizing it must follow the "nodelet" paradigm rather than the more common "node" paradigm. The open source (BSD License) uscauv-ros-pkg software package provides generic wrapper classes and scripts designed to speed up ROS development, as well as modular implementations of common robotics algorithms such as Kalman filters and template-based pattern matching.</li>
+      </ol> <br/> <br/>
+      </div>
+      
+      <div class="span8">
+        <p><b>Sensing</b></p>      
+      </div> <br/>
+      <div class="span2">
+        <img src="assets/img/figure4.jpg" width="170px"/>
+      </div>
+      <div class="span6">
+      <p>Currently, the most advanced sensor on the SeaBee AUV is the XSens MTi AHRS. The AHRS utilizes onboard rate gyroscopes, accelerometers, and magnetometers with an Extended Kalman Filter to produce a stable estimate of orientation in real time at 100 Hz.
+</p> 
+<p>
+The robot's hull is also fitted with an external pressure sensor, which is used to estimate the absolute depth of the AUV below the surface of the water via an experimentally-derived conversion from arbitrary pressure units to a distance in meters. With the current electronics infrastructure, this measurement is taken at 10 Hz.
+</p>
+<p>
+Without a Doppler Velocity Log (DVL), we must rely on alternate, often noisy sources of odometry. We have found it necessary to develop both a generic realtime simulation of our vehicle’s dynamics, as well as a generic Bayesian measurement fusion system capable of combining all components of all observables, whether simulated or physical, into corresponding "filtered" measurements.</p> <br/> <br/>
+      </div>
+      
+      <div class="span8">
+        <p><b>Vision Pipeline</b></p>      
+      </div> <br/>
+      <div class="span2">
+        <img src="assets/img/camera.jpeg" width="170px"/>
+      </div>
+      <div class="span6">
+      <p>The Seabee AUV views the world through four PointGrey Fireﬂy USB cameras: two facing forward and two facing downward. Both cameras are configured to stream Bayered 640x480 images at 60 hz. While the hardware interface to these cameras is USB, they support the IIDC 1394-based Digital Camera Specification over USB, allowing for the use of "firewire" camera drivers.</p>
+
+<p>Images streamed from the cameras are bayered and distorted by various optical effects, including those from the camera lenses and the results of different physical mediums surrounding the sensor tubes containing the cameras. To compensate for these effects, we use a community-developed ROS node called "image proc", which utilizes several common OpenCV functions to de-bayer and un-distort (given a camera calibration) the incoming raw images. A modular "image scaler" node allows for images to be easily converted across scale space before being fed into different image processing algorithms. This approachs conserves bandwidth by ensuring that high-resolution images are only utilized when this level of detail is required for optimal algorithm performance.</p> <br/> <br/>
+      </div>
+      
+      <div class="span8">
+        <p><b>Landmarks</b></p>      
+      </div> <br/>
+      <div class="span2">
+        <img src="assets/img/figure1-smallest.png" width="170px"/>
+      </div>
+      <div class="span6">
+      <p>The Seabee AUV navigation approach is centered around landmark-oriented visual odometry. Recognition and subsequent localization relative to landmarks, or unique competition objects, is critical to success in the RoboSub competition when the robotic platform used is not aided by a Doppler Velocity Log; however, these landmarks are subject to change each year. The robot utilizes an extensible landmark recognizer that accepts a landmark filter and calls on child modules to perform specialized landmark recognition. This ensures that, with the exception of drastic changes to the competition, landmark-dependent algorithms can remain mostly unchanged, while specialized recognition algorithms can be easily developed, tested, and deployed through a standard, familiar interface. We assume that certain landmarks are only located within certain parts of the competition pool, and we further assume that given an arbitrary set of goals, only some subset of these landmarks need to be recognized. Given these assumptions, we conclude that it is possible to search for only some subset of landmarks dependent on the current location and/or goal. Therefore, it is desirable to utilize some simple means of applying a landmark filter, with either narrowing or widening constraints, through recognition algorithms, in order to improve performance. We accomplish this via a custom color- and shape-based filtering API that accepts a list of filter items, each specifying either a narrowing or widening constraint to be applied to the color or type of a landmark. For example, when we are attempting to locate a buoy, we look for orange pipelines and buoys of any color on approach, then look for buoys of a single color on each buoy-touching attempt, then look for only orange pipelines and yellow hedges as we attempt to locate the first hedge, etc.</p> <br/> <br/>
+      </div>
+
+      <div class="span8">
+        <p><b>Color Classifier</b></p>      
+      </div> <br/>
+      <div class="span2">
+        <img src="assets/img/color_classifier_1.jpg" width="170px"/>
+      </div>
+      <div class="span6">
+      <p>Image segmentation is achieved using a trained Support Vector Machine encapsulated in a “color classifier” node. This approach was selected to facilitate robust color detection despite inconsistent lighting and water visibility. The SVM performs well for this task, as it is able to incorporate highly-nonlinear decision boundaries, which is key in poor lighting conditions where the perceptual distance between target colors and the water is very low. The color classifier node accepts a stream of color images and produces binary masks in which positively-classified pixels correspond to a specific color on which the SVM was trained. Training the color classifier involves producing “training images” - masks in which the user has positively identified the target colors. Multiple training images are simultaneously fed into a custom classifier program. The SVM is trained using radial basis functions (RBFs), and the SVM hyperparameter C is optimized using a grid search. The color classifier program produces a YAML description of the color. Multiple YAML color descriptions are dynamically loaded by the color classifier node at runtime. Classification is parallelized, with one thread allocated for each color. The output images are bit-shifted and OR-ed to produce an efficient color representation that can be quickly transported to successive nodes.</p> <br/> <br/><br/> <br/><br/> <br/><br/> <br/>
+      </div>
+      
+      <div class="span8">
+        <p><b>Shape Detector</b></p>      
+      </div> <br/>
+      <div class="span2">
+        <img src="assets/img/shape_matched_3.png" width="170px"/>
+      </div>
+      <div class="span6">
+      <p>Landmark detection is achieved using a "shape detector" node. This node matches 2D shapes from binary color classifier images to pre-loaded templates to produce a set of candidate landmark locations. The first stage of the shape-detector algorithm is finding contours in the color classifier data. This is achieved using the OpenCV implementation of the algorithm proposed by Suzuki et al. For each contour, we compute a "radial histogram", where bins are indexed by radial distance from the contour's centroid. Radial histograms are normalized for scale and rotation. These histograms are compared with template histograms for objects such as buoys and pipes using the Earth Mover's Distance. This approach is robust to partial occlusion and can be easily tuned.</p> <br/> <br/>
+      </div>
+      
+      <div class="span8">
+        <br/><p><b>Object Tracker</b></p>      
+      </div> <br/>
+      <div class="span2">
+        <img src="assets/img/object_tracking.png" width="170px"/>
+      </div>
+      <div class="span6">
+      <p>The Seabee AUV software architecture incorporates Kalman filters to obtain improved estimates for landmarks. Following shape detection, candidate shape locations are converted from image coordinates to world coordinates. This is achieved by reprojecting the image coordinates to 3D using known camera intrinsics. Each object is defined in a tree data structure in which each node contains shape and color information. This hierarchy of colored shapes is ﬂexible enough to support all of the visual landmarks found at RoboSub. Object descriptions are stored in a compact YAML format. Each object is initially alloted a single Kalman filter. The Kalman filters use an eight-dimensional state space which describes the object’s X/Y/Z position, rotation parallel to the camera plane, and a corresponding velocity for each of these parameters. This system is augmented by using multiple Kalman filters to represent multiple hypotheses as to the location of each object. When the system receives a new measurement input, it computes the conditional probability of the measurement for each filter with a matching shape and color. The measurement is incorporated by the filter with the highest conditional probability. If the probability falls below an empirically-determined threshold for all of the existing filters, a new filter is spawned. Filters are deleted if their variance becomes too large. For each object, the estimate from the filter with the highest confidence is continuously published to other nodes.</p> <br/> <br/>
+      </div>
+      
+      <div class="span8">
+        <br/><p><b>Sonar</b></p>      
+      </div> <br/>
+      <div class="span2">
+        <img src="assets/img/intersection_1.png" width="170px"/>
+      </div>
+      <div class="span6">
+      <p>Computation is distributed between the vehicle's primary computer, located in the main hull, and the dspStak processor, located inside the sonar pressure vessel. The dspStak preprocesses incoming signals by applying a gaussian filter and threshold. It then performs the fast fourier transform (FFT) on each signal and, for each hydrophone signal pair, computes the phase difference between the fundamental frequencies. RANSAC is applied to this vector of phase difference estimates to produce a global phase difference estimate that is robust to non-common-mode noise. These phase differences are then sent to the primary computer via an RS232-over-USB interface. This approach minimizes the bandwidth of the data transfer between the dspStak and the computer. Using an IEEE 754 double-precision ﬂoating point representation the worst-case bandwidth, assuming a 192 kHz sampling rate and a rolling window on the input signal, is 6.2 MB/s. To compute pinger location from phase differences, a convex-optimization-based approach was applied. It is known that each phase difference describes the surface of a cone on which the pinger must lie in order to have produced the measured phase difference. The exact location of the pinger is determined by intersecting these cones. However, susceptibility to measurement noise means that a precise intersection of all four phase cones is unlikely to exist. Mathematical optimization is applied as a solution to this problem.</p> <br/> <br/>
+      </div>
+    </div>
+    
+
+    <div id="extra">
+      <div class="container">
+        <div class="row-fluid">
+     	    <div class="span4">
+		        <p>
+		        &copy; Copyright 2013 USC AUV
+		        </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+  </body>
+</html>
