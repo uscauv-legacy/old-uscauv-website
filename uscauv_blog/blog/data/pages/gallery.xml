@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item><pubDate>Fri, 04 Oct 2013 21:05:08 -0700</pubDate><title><![CDATA[The Team]]></title><url><![CDATA[gallery]]></url><meta><![CDATA[]]></meta><metad><![CDATA[]]></metad><menu><![CDATA[The Team]]></menu><menuOrder><![CDATA[4]]></menuOrder><menuStatus><![CDATA[Y]]></menuStatus><template><![CDATA[template.php]]></template><parent><![CDATA[]]></parent><content><![CDATA[&lt;h4&gt;Team Captains&lt;/h4&gt;
+&lt;p&gt;(% gallery name=captain %)&lt;/p&gt;
+&lt;br /&gt;
+&lt;h4&gt;Software Team&lt;/h4&gt;
+&lt;p&gt;(% gallery name=software %)&lt;/p&gt;
+&lt;br /&gt;
+&lt;h4&gt;Electrical Team&lt;/h4&gt;
+&lt;p&gt;(% gallery name=electrical %)&lt;/p&gt;
+&lt;br /&gt;
+&lt;h4&gt;Mechanical Team&lt;/h4&gt;
+&lt;p&gt;(% gallery name=mechanical %)&lt;/p&gt;
+&lt;br /&gt;
+&lt;h4&gt;Administrative Team&lt;/h4&gt;
+&lt;p&gt;(% gallery name=admin %)&lt;/p&gt;
+]]></content><private><![CDATA[]]></private><author><![CDATA[admin]]></author></item>

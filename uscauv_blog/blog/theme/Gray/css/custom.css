@@ -1,0 +1,229 @@
+/* Custom CSS file */
+
+body {
+	background-color: white;
+	font-family:arial,lucida,tahoma, helvetica, verdana;
+	font-weight: 100;
+}
+
+.container {
+	margin: 20px 0px 20px 0px;
+}
+
+/* Header and logo */
+.header {
+	height: 200px;
+}
+
+hr {
+	color: #B0B0B0;
+	background-color: #B0B0B0;
+}
+
+.title_logo {
+	margin: 20px 0px 20px 0px;
+}
+
+/* Navigation bar */
+.navbar {
+	list-style:none;
+	padding: 20px 0px 10px 0px;
+}
+
+.navbar li {
+	float: right;
+	margin: 5px 0px 0px 10px;
+	font-size: 10pt;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.navbar li a {
+	display: block;
+	line-height: 30px;
+	padding: 0px 0px 0px 10px;
+	font-weight: 100;
+	text-decoration:none;
+}
+
+.navbar li a:link, .navbar li a:visited {
+	color:#606060;
+}
+
+.navbar li a:hover, .navbar li a:focus, .navbar li.current a  {
+	color: black;
+}
+
+.content {
+	padding: 10px 50px 10px 0px;
+	min-height: 350px;
+	text-align: justify;
+}
+
+.content h4 {
+	color: #606060;
+	font-size: 14pt;
+	font-weight: 200;
+	letter-spacing: 2px;
+	line-height: 0pt;
+	text-transform: uppercase;
+	padding-top: 10px;
+}
+
+/* Content - blog posts via news_manager plugin */
+.nm_post {
+	padding: 0;
+	margin-bottom: 50px;
+}
+
+.nm_post h3 {
+	margin-bottom: 5px;
+}
+
+.nm_post p {
+	margin-bottom: 10px;
+}
+
+.nm_post_title a {
+	text-decoration: none;
+	color: #606060;
+}
+
+.nm_post_title a:hover {
+	color: black;
+}
+
+.nm_post_date {
+	color: #909090;
+	font-size: 11px;
+}
+
+.nm_post_content {
+	margin-bottom: 20px;
+}
+
+.nm_post_meta {
+	padding: 2px 5px;
+	border: 1px solid #ccc;
+	background-color: #f9f9f9;
+	font-size: 11px;
+}
+
+.nm_post_back {
+	margin-top: 20px;
+	font-size: 11px;
+}
+
+.nm_post_back a {
+	text-decoration: none;
+}
+
+.nm_post_back a:hover {
+	text-decoration: underline;
+}
+
+.nm_page_nav .left {
+	float:left;
+	text-align:left;
+}
+
+.nm_page_nav .right {
+	float:right;
+	text-align:right;
+}
+
+aside .section a, aside .section a {
+	text-decoration: none;
+}
+
+aside .section a:hover, aside .section a:hover {
+	text-decoration: underline;
+}
+
+aside .section a.large {
+	font-size: 22px;
+}
+
+/* Sidebar */
+.sidebar {
+	min-height: 250px;
+	text-align: left;
+}
+
+.sidebar h4 {
+	color: #606060;
+	font-size: 12pt;
+	font-weight: 200;
+	letter-spacing: 2px;
+	line-height: 0pt;
+	text-transform: uppercase;
+}
+
+.sidebar ul {
+	list-style: none;
+	padding: 0px 0px 0px 10px;
+}
+
+/* Sidebar - recent blog posts via news_manager plugin */
+.nm_recent li {
+	margin: 0px 0px 10px 0px;
+}
+
+.nm_recent li a {
+	text-decoration: none;
+	color: #606060;
+	font-weight: 200;
+}
+
+.nm_recent li a:hover {
+	color: black;
+}
+
+/* Sidebar - blog post search via news_manager plugin */
+input[type=text] {
+	width: 150px;
+}
+
+input[type=submit] {
+	font-family:arial,lucida,tahoma, helvetica, verdana;
+	font-weight: 100;
+	font-size: 10pt;
+	color: #A0A0A0;
+	background-color: white;
+	border: none;
+	
+}
+
+input[type=submit]:hover {
+	color: #606060;
+}
+
+/* Sidebar - connect icons */
+.media {
+	text-align: left;
+}
+
+.media ul {
+	padding: 0px;
+}
+
+.media li {
+	display: inline-block;
+	padding: 0px 10px 0px 0px;
+}
+
+.media img {
+	width: 35px;
+	opacity: 0.6;
+	filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.media img:hover {
+	opacity: 1;
+	filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+/* Override Blueprint CSS, which prints href after link attribute */
+a:link:after {
+	content:"";
+}
